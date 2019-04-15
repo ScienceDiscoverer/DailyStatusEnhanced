@@ -1,18 +1,28 @@
 {
 	"addons":
 	{
-		"dailystatus@enhanced.com":
+		"dailystatus@enhanced.io":
 		{
 			"updates":
 			[
 				{
 					"version": "1.0.1",
-					"update_link": "https://www.dropbox.com/s/vuj37a5jwk2jvro/daily_status_enhanced-1.0.1-fx.xpi"
+					"update_link": "https://github.com/ScienceDiscoverer/DailyStatusEnhanced/raw/master/daily_status_enhanced-1.0.1-fx.xpi"
 				},
 				
 				{
 					"version": "1.0.2",
-					"update_link": "https://www.dropbox.com/s/vgyghbg177jjly2/daily_status_enhanced-1.0.2-fx.xpi"
+					"update_link": "https://github.com/ScienceDiscoverer/DailyStatusEnhanced/raw/master/daily_status_enhanced-1.0.2-fx.xpi"
+				},
+				
+				{
+					"version": "1.0.3",
+					"update_link": "https://github.com/ScienceDiscoverer/DailyStatusEnhanced/raw/master/daily_status_enhanced-1.0.3-fx.xpi"
+				},
+				
+				{
+					"version": "1.0.4",
+					"update_link": "https://github.com/ScienceDiscoverer/DailyStatusEnhanced/raw/master/daily_status_enhanced-1.0.4-fx.xpi"
 				}
 			]
 		}
