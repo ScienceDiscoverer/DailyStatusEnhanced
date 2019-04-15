@@ -1,0 +1,42 @@
+{
+
+  "manifest_version": 2,
+  "name": "Daily Status Enhanced",
+  "version": "1.0.4",
+
+  "description": "Greatly improves Daily Status Google Form by auto-filling some fields, filtering unwanted options and making it more compact.",
+
+  "icons": {
+	"24": "icons/daily_24.png",
+    "48": "icons/daily_48.png",
+	"96": "icons/daily_96.png"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*://*.docs.google.com/forms/*"],
+      "js": ["enhance.js"]
+    }
+  ],
+  
+  "web_accessible_resources": [
+	"data/+.png",
+	"data/+_prs.png"
+  ],
+  
+  "options_ui": {
+	"page": "options.html",
+	"browser_style": true
+	},
+  
+  "permissions": [
+	"storage"
+	],
+	
+  "applications": {
+	"gecko": {
+		"id": "dailystatus@enhanced.io",
+		"update_url": "https://raw.githubusercontent.com/ScienceDiscoverer/DailyStatusEnhanced/master/update.json"
+	}
+  }
+}
