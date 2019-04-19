@@ -1,4 +1,4 @@
-var n = chrome.storage.sync.get();
+var n = browser.storage.sync.get();
 
 n.then(function syncro(res)
 {
@@ -6,7 +6,7 @@ n.then(function syncro(res)
 },
 (res) =>
 {
-	var p = chrome.storage.local.get();
+	var p = browser.storage.local.get();
 	p.then(function locale(res)
 	{
 		main(res);
@@ -15,9 +15,10 @@ n.then(function syncro(res)
 
 function main(data)
 {
-	var name = data.name;
-	var project1 = data.project1;
-	var wprojs = data.whiteprojs.split("\n");
+	var name = data.name || "";
+	var project1 = data.project1 || "";
+	var emptyarr = [""];
+	var wprojs = data.whiteprojs.split("\n") || emptyarr;
 	
 	//document.body.style.border = "15px solid green"; // My first manipulation in js (<>_<>)
 
