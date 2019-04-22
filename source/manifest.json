@@ -2,7 +2,7 @@
 
   "manifest_version": 2,
   "name": "Daily Status Enhanced",
-  "version": "1.0.5",
+  "version": "1.0.6",
 
   "description": "Greatly improves Daily Status Google Form by auto-filling some fields, filtering unwanted options and making it more compact.",
 

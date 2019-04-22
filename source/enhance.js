@@ -3,15 +3,15 @@ var n = browser.storage.sync.get();
 n.then(function syncro(res)
 {
 	main(res);
-},
-(res) =>
+}, (res) => { alert("Sync failed!"); }
+/*(res) =>
 {
 	var p = browser.storage.local.get();
 	p.then(function locale(res)
 	{
 		main(res);
 	});
-});
+}*/);
 
 function main(data)
 {
@@ -189,6 +189,41 @@ function main(data)
 	{
 		filterProjs(f[2+3*i]);
 	}
+	
+	// Asana tasks parsing
+	/*function asanaParse(e)
+	{
+		var e = window.event || e;
+		var targ = e.target || e.srcElement;
+		var str = e.clipboardData.getData("text/plain");
+		str.replace(/\s(.*)/i, "; ");
+		str.replace(/[.*]/i, "");
+		targ.setAttribue("data-initial-value", str);
+	}*/
+	
+	/*var t = document.getElementsByClassName("quantumWizTextinputPapertextareaInput");
+	
+	for(var i = 0; i < t.length; ++i)
+	{
+		t[i].onpaste = function asanaParse(e)
+		{
+			var e = window.event || e;
+			var targ = e.target || e.srcElement;
+			var str = e.clipboardData.getData("text/plain");
+			str = str.replace(/\[.*?\]/g, ";");
+			//str = str.replace(/\(.*?\)/g, "; ");
+			str = str.replace(/\s\(.*\);/g, "; ");
+			str = str.replace(/\s\(.*\)/g, "");
+			str = str.replace(/\n/g, "");
+			console.log(str);
+			targ.setAttribute("data-initial-value", str);
+			targ.innerHTML = str;
+			targ.setAttribute("aria-invalid", "false");
+			targ.setAttribute("badinput", "false");
+			
+			return true;
+		}
+	}*/
 }
 
 
