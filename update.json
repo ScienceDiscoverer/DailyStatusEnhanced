@@ -33,6 +33,11 @@
 				{
 					"version": "1.0.6",
 					"update_link": "https://github.com/ScienceDiscoverer/DailyStatusEnhanced/raw/master/daily_status_enhanced-1.0.6-fx.xpi"
+				},
+				
+				{
+					"version": "1.1.0",
+					"update_link": "https://github.com/ScienceDiscoverer/DailyStatusEnhanced/raw/master/daily_status_enhanced-1.1.0-fx.xpi"
 				}
 			]
 		}
