@@ -6,7 +6,9 @@ function save(e)
 		
 		name: document.getElementById("name").value,
 		project1: document.getElementById("project1").value,
-		whiteprojs: document.getElementById("wprojs").value
+		whiteprojs: document.getElementById("wprojs").value,
+		time1: document.getElementById("time1").value,
+		parsing: document.getElementById("parsing").checked
 		
 		});
 	p.then(() => {
@@ -36,6 +38,8 @@ function load()
 	document.getElementById("name").value = res.name || "";
 	document.getElementById("project1").value = res.project1 || "";
 	document.getElementById("wprojs").value = res.whiteprojs || "";
+	document.getElementById("time1").value = res.time1 || "";
+	document.getElementById("parsing").checked = res.parsing || false;
 	}, (res) => {}
 	/*(res) => {
 	var p = browser.storage.local.get();

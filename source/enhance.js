@@ -19,6 +19,10 @@ function main(data)
 	var project1 = data.project1 || "";
 	var emptyarr = [""];
 	var wprojs = data.whiteprojs.split("\n") || emptyarr;
+	var deftime1 = data.time1 || "";
+	var asanaparse = data.parsing || false;
+	
+	console.log(time1);
 	
 	//document.body.style.border = "15px solid green"; // My first manipulation in js (<>_<>)
 
@@ -190,40 +194,48 @@ function main(data)
 		filterProjs(f[2+3*i]);
 	}
 	
-	// Asana tasks parsing
-	/*function asanaParse(e)
+	// Asana tasks parsing	
+	if(asanaparse)
 	{
-		var e = window.event || e;
-		var targ = e.target || e.srcElement;
-		var str = e.clipboardData.getData("text/plain");
-		str.replace(/\s(.*)/i, "; ");
-		str.replace(/[.*]/i, "");
-		targ.setAttribue("data-initial-value", str);
-	}*/
-	
-	/*var t = document.getElementsByClassName("quantumWizTextinputPapertextareaInput");
-	
-	for(var i = 0; i < t.length; ++i)
-	{
-		t[i].onpaste = function asanaParse(e)
+		var t = document.getElementsByClassName("quantumWizTextinputPapertextareaInput");
+		
+		for(var i = 0; i < t.length; ++i)
 		{
-			var e = window.event || e;
-			var targ = e.target || e.srcElement;
-			var str = e.clipboardData.getData("text/plain");
-			str = str.replace(/\[.*?\]/g, ";");
-			//str = str.replace(/\(.*?\)/g, "; ");
-			str = str.replace(/\s\(.*\);/g, "; ");
-			str = str.replace(/\s\(.*\)/g, "");
-			str = str.replace(/\n/g, "");
-			console.log(str);
-			targ.setAttribute("data-initial-value", str);
-			targ.innerHTML = str;
-			targ.setAttribute("aria-invalid", "false");
-			targ.setAttribute("badinput", "false");
-			
-			return true;
+			t[i].onpaste = function asanaParse(e)
+			{
+				var e = window.event || e;
+				var targ = e.target || e.srcElement;
+				var str = e.clipboardData.getData("text/plain");
+				str = str.replace(/\[.*?\]/g, ";");
+				str = str.replace(/\s\(.*\);/g, "; ");
+				str = str.replace(/\s\(.*\)/g, "");
+				str = str.replace(/\n/g, "");
+				console.log(str);
+				targ.setAttribute("data-initial-value", str);
+				targ.innerText = str;
+				
+				targ.parentElement.parentElement.children[0].style = "display:none";
+				
+				targ.style = "height:" + targ.scrollHeight + "px";
+				
+				console.log("targh: ", targ.scrollHeight);
+				console.log("elh: ", e.scrollHeight);
+				//var emptystr = "";
+				//navigator.clipboard.writeText(emptystr);
+				//targ.setAttribute("aria-invalid", "false");
+				//targ.setAttribute("badinput", "false");
+
+				return false;
+			}
 		}
-	}*/
+	}
+	
+	// Set default time
+	var time1 = document.getElementsByClassName("quantumWizTextinputPaperinputInput")[3];
+	
+	time1.setAttribute("data-initial-value", deftime1);
+	time1.setAttribute("value", deftime1);
+	time1.parentElement.parentElement.parentElement.parentElement.className += " hasValue";
 }
 
 
